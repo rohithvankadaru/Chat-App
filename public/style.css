@@ -1,0 +1,45 @@
+body{
+    padding: 0px;
+    margin: 0px;
+}
+
+#userForm{
+    display: none;   /* Temporarly for development purpose */
+}
+/* .chatRoom-Container{
+    display: none;
+} */
+
+.chatRoom-header{
+    background-color: rgb(53, 48, 48);
+    color: white;
+    font-size: 2rem;
+    padding: 0.5rem;
+    text-align: center;
+}
+
+.messages{
+    display: flex;
+    flex-direction: column;
+    height: 84vh;
+    background-color: #e1e1e1;
+}
+
+.message{
+    background-color: #DCF8C6;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 0.5rem;
+    margin: 0.5rem;
+}
+.sent{
+    align-self: flex-end;
+}
+
+.messageInput{
+    border: 2px solid rgb(140, 133, 133);
+    border-radius: 20px;
+    margin-left: 7px;
+    width: 88vw;
+    height: 50px;
+}
