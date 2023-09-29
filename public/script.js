@@ -50,11 +50,12 @@ socket.on('chat message', data => {
 
 function appendMessage(data, type) {
     const msgDiv = document.createElement('div');
-    msgDiv.innerText = `${data.userName} : ${data.message}`;
     if (type === 'sent') {
         msgDiv.setAttribute('class', 'message sent')
+        msgDiv.innerText = `${data.message}`;
     }
     else {
+        msgDiv.innerText = `${data.userName} : ${data.message}`;
         msgDiv.setAttribute('class', 'message received')
     }
     messagesContainer.append(msgDiv);
