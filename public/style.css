@@ -60,6 +60,8 @@ body{
 }
 .sent{
     align-self: flex-end;
+    margin-right: 20px;
+    padding: 0.8rem;
 }
 
 .messageInput{
@@ -72,6 +74,8 @@ body{
 }
 
 #send-btn{
+    margin-left: 1.7vw;
+    margin-bottom: 5px;
     width: 9vw;
     height: auto;
 }
