@@ -36,7 +36,8 @@ body {
 }
 
 .chatRoom-Container {
-    display: none;
+    /* display: none; */
+    display: block;
 }
 
 .chatRoom-header {
@@ -106,5 +107,7 @@ body {
 }
 
 .chatImg {
+    padding: 0px;
     margin-left: 20px;
+    border-radius: 10px;
 }
