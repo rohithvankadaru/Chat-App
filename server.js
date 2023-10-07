@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 8888;
 
 io.on("connection", (socket) => {
     socket.on("chat message", (data) => {
-        io.emit("chat message", data);
+        io.emit(`chat message ${data.toUserName}`, data);
     })
 });
 

@@ -1,7 +1,9 @@
 var socket = io();
 let userName = "";
+let toUserName = "";
 const joinChatBtn = document.getElementById("join-chat");
 const userNameInput = document.getElementById("username-input");
+const toUserNameInput = document.getElementById("toUsername-input");
 const userForm = document.getElementById("userLoginForm");
 const chatRoomContainer = document.querySelector(".chatRoom-Container");
 const sendBtn = document.getElementById("send-btn");
@@ -14,10 +16,16 @@ joinChatBtn.addEventListener("click", (event) => {
     event.preventDefault();
 
     userName = userNameInput.value;
+    toUserName = toUserNameInput.value;
 
     if (userName) {
         userForm.style.display = "none";
         chatRoomContainer.style.display = "block";
+        socket.on(`chat message ${userName}`, data => {
+            if (data.id !== socket.id) {
+                appendMessage(data, "received")
+            }
+        })
     }
 });
 
@@ -33,6 +41,7 @@ sendBtn.addEventListener("click", (event) => {
         let data = {
             id: socket.id,
             userName: userName,
+            toUserName: toUserName,
             message: inputMessageTag.value
         };
         socket.emit("chat message", data);
@@ -41,11 +50,6 @@ sendBtn.addEventListener("click", (event) => {
     }
 });
 
-socket.on('chat message', data => {
-    if (data.id !== socket.id) {
-        appendMessage(data, "received")
-    }
-})
 
 
 function appendMessage(data, type) {
