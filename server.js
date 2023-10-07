@@ -5,10 +5,10 @@ const server = http.createServer(app);
 const { Server } = require("socket.io");
 const io = new Server(server);
 
-const PORT  = process.env.PORT || 8888;
+const PORT = process.env.PORT || 8888;
 
-io.on("connection", (socket)=>{
-    socket.on("chat message", (data)=>{
+io.on("connection", (socket) => {
+    socket.on("chat message", (data) => {
         io.emit("chat message", data);
     })
 });

@@ -21,7 +21,7 @@ joinChatBtn.addEventListener("click", (event) => {
     }
 });
 
-inputMessageTag.addEventListener("keypress", (event)=>{
+inputMessageTag.addEventListener("keypress", (event) => {
     if (event.keyCode == 13) {
         sendBtn.click();
     }
