@@ -36,8 +36,7 @@ body {
 }
 
 .chatRoom-Container {
-    /* display: none; */
-    display: block;
+    display: none;
 }
 
 .chatRoom-header {
