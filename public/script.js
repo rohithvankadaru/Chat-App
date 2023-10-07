@@ -9,6 +9,7 @@ const chatRoomContainer = document.querySelector(".chatRoom-Container");
 const sendBtn = document.getElementById("send-btn");
 const inputMessageTag = document.querySelector(".messageInput");
 const messagesContainer = document.querySelector(".messages");
+let userNameDisplay = document.getElementById('user-name-display');
 
 
 
@@ -26,6 +27,7 @@ joinChatBtn.addEventListener("click", (event) => {
                 appendMessage(data, "received")
             }
         })
+        userNameDisplay.innerText = userName;
     }
 });
 

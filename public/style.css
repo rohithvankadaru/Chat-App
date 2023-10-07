@@ -43,11 +43,17 @@ body{
     padding: 0.5rem;
     text-align: center;
 }
+#user-name-display{
+    color: white;
+    background-color: rgb(53, 48, 48);
+    text-align: center;
+    padding: 0.1rem;
+}
 
 .messages{
     display: flex;
     flex-direction: column;
-    height: 84vh;
+    height: 77.5vh;
     background-image: url(images/chat-background.avif);
 }
 
