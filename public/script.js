@@ -22,7 +22,7 @@ joinChatBtn.addEventListener("click", (event) => {
     userName = userNameInput.value;
     toUserName = toUserNameInput.value;
 
-    if (userName) {
+    if (userName && toUserName) {
         userForm.style.display = "none";
         chatRoomContainer.style.display = "block";
         socketOnFn();
