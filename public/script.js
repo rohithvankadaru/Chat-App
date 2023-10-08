@@ -83,7 +83,7 @@ function appendMessage(data, type) {
         msgDiv.innerText = `${data.userName} : ${data.message}`;
     }
     messagesContainer.append(msgDiv);
-    msgDiv.scrollIntoView({behavior: "smooth"});
+    msgDiv.scrollIntoView({ behavior: "smooth" });
 }
 function appendFile(imgArg, type) {
     if (!imgArg) return;
@@ -98,7 +98,7 @@ function appendFile(imgArg, type) {
     imgTag.src = URL.createObjectURL(imgArg);
     messagesContainer.appendChild(imgTag);
     file = '';
-    imgTag.addEventListener('load', ()=>{
+    imgTag.addEventListener('load', () => {
         imgTag.scrollIntoView({
             block: "end",
             behavior: "smooth"
