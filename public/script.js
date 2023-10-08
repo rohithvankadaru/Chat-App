@@ -25,17 +25,17 @@ joinChatBtn.addEventListener("click", (event) => {
     if (userName) {
         userForm.style.display = "none";
         chatRoomContainer.style.display = "block";
-        socketFn();
+        socketOnFn();
         userNameDisplay.innerText = userName + ' --> ' + toUserName;
     }
 });
 
-function socketFn() {
+function socketOnFn() {
     socket.on(`chat message ${userName}`, data => {
         if (data.id !== socket.id) {
             appendMessage(data, "received");
-            const imgFile = readImgFile(data.file);
-            if (imgFile) {
+            if (data.file) {
+                const imgFile = readImgFile(data.file);
                 appendFile(imgFile, 'received');
             }
         }
@@ -43,7 +43,8 @@ function socketFn() {
 }
 
 function readImgFile(arrayBuffer) {
-    return new Blob([arrayBuffer], { type: 'image/jpeg' });
+    console.log(11111);
+    return new Blob([arrayBuffer], { type: 'image/*' });
 }
 
 inputMessageTag.addEventListener("keypress", (event) => {
