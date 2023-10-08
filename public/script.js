@@ -85,6 +85,7 @@ function appendMessage(data, type) {
         msgDiv.innerText = `${data.userName} : ${data.message}`;
     }
     messagesContainer.append(msgDiv);
+    msgDiv.scrollIntoView();
 }
 function appendFile(imgArg, type) {
     const imgTag = document.createElement('img');
@@ -98,6 +99,7 @@ function appendFile(imgArg, type) {
     imgTag.src = URL.createObjectURL(imgArg);
     messagesContainer.appendChild(imgTag);
     file = '';
+    imgTag.scrollIntoView();
 }
 
 fileInputBtn.addEventListener('click', () => chooseFileBtn.click());
