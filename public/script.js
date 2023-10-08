@@ -43,7 +43,6 @@ function socketOnFn() {
 }
 
 function readImgFile(arrayBuffer) {
-    console.log(11111);
     return new Blob([arrayBuffer], { type: 'image/*' });
 }
 
@@ -65,9 +64,7 @@ sendBtn.addEventListener("click", (event) => {
         };
         socket.emit("chat message", data);
         appendMessage(data, "sent");
-        if (data.file) {
-            appendFile(data.file, 'sent');
-        }
+        appendFile(data.file, 'sent');
         inputMessageTag.value = null;
     }
 });
@@ -75,6 +72,7 @@ sendBtn.addEventListener("click", (event) => {
 
 
 function appendMessage(data, type) {
+    if (!data.message) return;
     const msgDiv = document.createElement('div');
     if (type === 'sent') {
         msgDiv.setAttribute('class', 'message sent')
@@ -85,9 +83,10 @@ function appendMessage(data, type) {
         msgDiv.innerText = `${data.userName} : ${data.message}`;
     }
     messagesContainer.append(msgDiv);
-    msgDiv.scrollIntoView();
+    msgDiv.scrollIntoView({behavior: "smooth"});
 }
 function appendFile(imgArg, type) {
+    if (!imgArg) return;
     const imgTag = document.createElement('img');
     imgTag.style.width = '12vw';
     imgTag.style.height = 'auto';
@@ -99,7 +98,12 @@ function appendFile(imgArg, type) {
     imgTag.src = URL.createObjectURL(imgArg);
     messagesContainer.appendChild(imgTag);
     file = '';
-    imgTag.scrollIntoView();
+    imgTag.addEventListener('load', ()=>{
+        imgTag.scrollIntoView({
+            block: "end",
+            behavior: "smooth"
+        });
+    })
 }
 
 fileInputBtn.addEventListener('click', () => chooseFileBtn.click());
