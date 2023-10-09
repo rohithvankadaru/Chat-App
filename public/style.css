@@ -4,7 +4,7 @@ body {
 }
 
 #userLoginForm {
-    background-color:#4db0e8;
+    background-color: #4db0e8;
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -33,17 +33,31 @@ body {
     background-color: rgb(185, 251, 86);
 }
 
+#user-name-display{
+    margin-left: 20px;
+}
+#calling-options{
+    display: flex;
+    justify-content: space-between;
+    width: 100px;
+    margin-right: 40px;
+}
+#calling-options>i{
+    cursor: pointer;
+}
+
 .chatRoom-Container {
     display: none;
-    box-sizing: border-box;
 }
 
 .chatRoom-header {
-    background-color: rgb(53, 48, 48);
-    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #4aac4a;
+    color: whitesmoke;
     font-size: 2rem;
     padding: 0.5rem;
-    text-align: center;
 }
 
 .messages {
@@ -70,6 +84,15 @@ body {
     align-self: flex-end;
     margin-right: 20px;
     padding: 0.8rem;
+}
+
+#message-div {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #4aac4a;
+    color: rgba(245, 245, 245, 0.626);
+    border-radius: 15px;
 }
 
 .messageInput {
@@ -119,7 +142,8 @@ body {
         height: 38px;
         width: auto;
     }
-    .chatImg{
+
+    .chatImg {
         width: 45vw;
     }
 }

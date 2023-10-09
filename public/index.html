@@ -26,12 +26,18 @@
 
 
     <div class="chatRoom-Container">
-        <h3 id="user-name-display" class="chatRoom-header"></h3>
+        <section  class="chatRoom-header">
+            <h3 id="user-name-display">Rohith</h3>
+            <div id="calling-options">
+                <i class="fa-solid fa-video"></i>
+                <i class="fa-solid fa-phone"></i>
+            </div>
+        </section>
         <div class="messages">
             <!-- <div class="message">Hey</div>
             <div class="message sent">Hi</div> -->
         </div>
-        <div style="display: flex; align-items: center; justify-content: space-evenly;">
+        <div id="message-div">
             <input type="text" placeholder="       type your message" class="messageInput">
             <input type="file" value="file input" id="choose-file" accept="image/*">
             <i id="file-input" class="fa-solid fa-camera fa-2xl"></i>
