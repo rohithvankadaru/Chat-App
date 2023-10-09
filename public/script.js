@@ -53,7 +53,7 @@ inputMessageTag.addEventListener("keypress", (event) => {
 });
 
 inputMessageTag.addEventListener('focus', ()=>{
-    document.body.style.height = '70%';
+    document.body.style.height = '30%';
 });
 inputMessageTag.addEventListener('blur', ()=>{
     document.body.style.height = '100%';
