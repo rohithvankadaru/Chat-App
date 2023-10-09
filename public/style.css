@@ -185,6 +185,9 @@ body {
 
 
 @media screen and (max-width: 500px) and (max-height: 1048px) {
+    #userLoginForm input {
+        width: 87%;
+    }
     .messageInput {
         width: 55vw;
     }
@@ -196,5 +199,10 @@ body {
 
     .chatImg {
         width: 45vw;
+    }
+    #recent-chats-clear-btn{
+        align-self: center;
+        margin-right: 0px;
+        margin-top: 0px;
     }
 }

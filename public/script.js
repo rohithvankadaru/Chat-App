@@ -50,9 +50,9 @@ joinChatBtn.addEventListener("click", (event) => {
     userName = userNameInput.value;
     toUserName = toUserNameInput.value;
 
-    addUserInStroage(toUserName);
 
     if (userName && toUserName) {
+        addUserInStroage(toUserName);
         startPageContainer.style.display = "none";
         chatRoomContainer.style.display = "block";
         socketOnFn();
