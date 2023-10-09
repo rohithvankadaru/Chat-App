@@ -54,7 +54,8 @@ inputMessageTag.addEventListener("keypress", (event) => {
 
 inputMessageTag.addEventListener('focus', ()=>{
     if(window.innerHeight <= 1048 && window.innerWidth <= 500){
-        messagesContainer.style.height = '45vh';
+        messagesContainer.style.height = '35vh';
+        document.body.style.height = '40vh';
     }
 });
 inputMessageTag.addEventListener('blur', ()=>{
