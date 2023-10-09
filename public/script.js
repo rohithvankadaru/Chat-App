@@ -5,16 +5,44 @@ let file;
 const joinChatBtn = document.getElementById("join-chat");
 const userNameInput = document.getElementById("username-input");
 const toUserNameInput = document.getElementById("toUsername-input");
-const userForm = document.getElementById("userLoginForm");
+const startPageContainer = document.getElementById("start-page-container");
 const chatRoomContainer = document.querySelector(".chatRoom-Container");
 const sendBtn = document.getElementById("send-btn");
 const inputMessageTag = document.querySelector(".messageInput");
 const messagesContainer = document.querySelector(".messages");
 const fileInputBtn = document.getElementById('file-input');
 const chooseFileBtn = document.getElementById('choose-file');
+const recentUsersSection = document.getElementById('recent-users-section');
+const recentChatsClearBtn = document.getElementById('recent-chats-clear-btn');
+
 let userNameDisplay = document.getElementById('user-name-display');
 
 
+function renderRecentChats() {
+    let recentChatsString = localStorage.getItem('recentChats');
+    if (recentChatsString) {
+        const recentChatsArray = JSON.parse(recentChatsString);
+        recentChatsArray.forEach(element => {
+            recentUsersSection.innerHTML = recentUsersSection.innerHTML + `<div id="recent-user">${element}</div>`
+        });
+    }
+}
+renderRecentChats();
+
+function addUserInStroage(user) {
+    let recentChatsString = localStorage.getItem('recentChats');
+    let recentChatsArray = [];
+    if (recentChatsString) {
+        recentChatsArray = JSON.parse(recentChatsString);
+    }
+    recentChatsArray.push(user);
+    localStorage.setItem('recentChats', JSON.stringify(recentChatsArray));
+}
+
+recentChatsClearBtn.addEventListener('click', () => {
+    localStorage.clear();
+    recentUsersSection.innerHTML = '';
+});
 
 joinChatBtn.addEventListener("click", (event) => {
     event.preventDefault();
@@ -22,8 +50,10 @@ joinChatBtn.addEventListener("click", (event) => {
     userName = userNameInput.value;
     toUserName = toUserNameInput.value;
 
+    addUserInStroage(toUserName);
+
     if (userName && toUserName) {
-        userForm.style.display = "none";
+        startPageContainer.style.display = "none";
         chatRoomContainer.style.display = "block";
         socketOnFn();
         userNameDisplay.innerText = userName + ' --> ' + toUserName;
@@ -52,13 +82,13 @@ inputMessageTag.addEventListener("keypress", (event) => {
     }
 });
 
-inputMessageTag.addEventListener('focus', ()=>{
-    if(window.innerHeight <= 1048 && window.innerWidth <= 500){
+inputMessageTag.addEventListener('focus', () => {
+    if (window.innerHeight <= 1048 && window.innerWidth <= 500) {
         messagesContainer.style.height = '35vh';
         document.body.style.height = '40vh';
     }
 });
-inputMessageTag.addEventListener('blur', ()=>{
+inputMessageTag.addEventListener('blur', () => {
     messagesContainer.style.height = '82.5vh';
 })
 

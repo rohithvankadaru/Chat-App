@@ -16,17 +16,27 @@
 
 <body>
 
-    <form id="userLoginForm">
-        <h1>Join Chatroom</h1>
-        <p>Username</p>
-        <input type="text" placeholder="username" id="username-input">
-        <input type="text" placeholder="Chat with" id="toUsername-input">
-        <button id="join-chat">join chat</button>
-    </form>
+    <section id="start-page-container" style="display: flex;">
+        <div id="recent-chats">
+            <h2 id="recent-chats-head">Recent Chats</h2>
+            <button id="recent-chats-clear-btn">Clear</button>
+            <div id="recent-users-section">
+                <!-- <div id="recent-user">Rohith</div>
+                <div id="recent-user">Krishna</div> -->
+            </div>
+        </div>
+        <form id="userLoginForm">
+            <h1>Join Chatroom</h1>
+            <p>Username</p>
+            <input type="text" placeholder="username" id="username-input">
+            <input type="text" placeholder="Chat with" id="toUsername-input">
+            <button id="join-chat">join chat</button>
+        </form>
+    </section>
 
 
     <div class="chatRoom-Container">
-        <section  class="chatRoom-header">
+        <section class="chatRoom-header">
             <h3 id="user-name-display">Rohith</h3>
             <div id="calling-options">
                 <i class="fa-solid fa-video"></i>
