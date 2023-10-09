@@ -3,7 +3,7 @@ body {
     margin: 0px;
 }
 
-#recent-chats{
+#recent-chats {
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -12,13 +12,13 @@ body {
     height: 100vh;
 }
 
-#recent-chats-head{
+#recent-chats-head {
     margin-top: 20px;
     color: whitesmoke;
     font-weight: bold;
 }
 
-#recent-chats-clear-btn{
+#recent-chats-clear-btn {
     align-self: flex-end;
     border: none;
     background-color: whitesmoke;
@@ -29,24 +29,43 @@ body {
     margin-top: 20px;
 }
 
-#recent-chets-clear-btn:active{
+#recent-chats-clear-btn:active {
     background-color: rgb(255, 255, 255);
 }
 
-#recent-users-section{
+#recent-users-section {
     margin-top: 30px;
+    overflow: auto;
 }
 
-#recent-user{
+#recent-users-section::-webkit-scrollbar {
+    width: 10px;
+    height: 0px;
+}
+
+#recent-users-section::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#recent-users-section::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+#recent-users-section::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+#recent-user {
     background-color: rgba(0, 0, 0, 30%);
     color: whitesmoke;
     width: 100%;
     margin: 1px;
     padding-block: 20px;
     font-size: large;
-    /* transition: all ease 0.1s; */
+    transition: all ease 0.1s;
 }
-#recent-user:hover{
+
+#recent-user:hover {
     background-color: rgba(0, 0, 0, 40%);
     font-size: larger;
 }
@@ -82,16 +101,18 @@ body {
     background-color: rgb(185, 251, 86);
 }
 
-#user-name-display{
+#user-name-display {
     margin-left: 20px;
 }
-#calling-options{
+
+#calling-options {
     display: flex;
     justify-content: space-between;
     width: 100px;
     margin-right: 40px;
 }
-#calling-options>i{
+
+#calling-options>i {
     cursor: pointer;
 }
 
@@ -188,6 +209,7 @@ body {
     #userLoginForm input {
         width: 87%;
     }
+
     .messageInput {
         width: 55vw;
     }
@@ -200,7 +222,8 @@ body {
     .chatImg {
         width: 45vw;
     }
-    #recent-chats-clear-btn{
+
+    #recent-chats-clear-btn {
         align-self: center;
         margin-right: 0px;
         margin-top: 0px;
