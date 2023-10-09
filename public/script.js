@@ -50,6 +50,13 @@ inputMessageTag.addEventListener("keypress", (event) => {
     if (event.keyCode == 13) {
         sendBtn.click();
     }
+});
+
+inputMessageTag.addEventListener('focus', ()=>{
+    document.body.style.height = '70%';
+});
+inputMessageTag.addEventListener('blur', ()=>{
+    document.body.style.height = '100%';
 })
 
 sendBtn.addEventListener("click", (event) => {
