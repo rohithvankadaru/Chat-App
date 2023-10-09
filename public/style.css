@@ -6,7 +6,8 @@ body {
 #userLoginForm {
     background-color:#4db0e8;
     height: 100vh;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -34,7 +35,8 @@ body {
 }
 
 .chatRoom-Container {
-    display: none;
+    /* display: none; */
+    display: block;
     box-sizing: border-box;
 }
 
@@ -99,6 +101,8 @@ body {
 }
 
 .chatImg {
+    width: 12vw;
+    height: auto;
     border: 5.5px solid rgb(72, 66, 66);
     padding: 0px;
     margin-left: 20px;
@@ -108,7 +112,7 @@ body {
 }
 
 
-@media screen and (max-width: 500px) and (max-height: 1048) {
+@media screen and (max-width: 500px) and (max-height: 1048px) {
     .messageInput {
         width: 55vw;
     }
@@ -116,5 +120,8 @@ body {
     #send-btn {
         height: 38px;
         width: auto;
+    }
+    .chatImg{
+        width: 45vw;
     }
 }

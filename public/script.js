@@ -88,8 +88,6 @@ function appendMessage(data, type) {
 function appendFile(imgArg, type) {
     if (!imgArg) return;
     const imgTag = document.createElement('img');
-    imgTag.style.width = '12vw';
-    imgTag.style.height = 'auto';
     if (type === 'sent') {
         imgTag.setAttribute('class', 'sent chatImg');
     } else {
