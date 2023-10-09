@@ -133,7 +133,7 @@ body {
 .messages {
     display: flex;
     flex-direction: column;
-    height: 82.5vh;
+    height: 81.5vh;
     background-image: url(images/chat-background.avif);
     overflow: auto;
 }
@@ -179,8 +179,8 @@ body {
 #send-btn {
     cursor: pointer;
     margin-left: 1.7vw;
-    margin-bottom: 5px;
-    height: 50px;
+    padding-block: 6px;
+    height: 75px;
     width: auto;
 }
 
@@ -210,22 +210,25 @@ body {
         width: 87%;
     }
 
+    #recent-chats{
+        width: 40vw;
+    }
+
+    #userLoginForm{
+        width: 60vw;
+    }
+
+    #recent-chats-clear-btn {
+        padding: 0px 5px;
+        margin-right: 15px;
+        margin-top: 30px;
+    }
+
     .messageInput {
         width: 55vw;
     }
 
-    #send-btn {
-        height: 38px;
-        width: auto;
-    }
-
     .chatImg {
         width: 45vw;
-    }
-
-    #recent-chats-clear-btn {
-        align-self: center;
-        margin-right: 0px;
-        margin-top: 0px;
     }
 }
