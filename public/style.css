@@ -6,7 +6,8 @@ body {
 #userLoginForm {
     background-color: #4db0e8;
     height: 100vh;
-    display: flex;
+    /* display: flex; */
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -47,7 +48,8 @@ body {
 }
 
 .chatRoom-Container {
-    display: none;
+    /* display: none; */
+    display: block;
 }
 
 .chatRoom-header {
