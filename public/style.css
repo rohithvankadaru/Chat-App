@@ -130,11 +130,20 @@ body {
     padding: 0.5rem;
 }
 
-.messages {
-    display: flex;
-    flex-direction: column;
+.messages-section {
     height: 81.5vh;
     background-image: url(images/chat-background.avif);
+}
+
+.messages {
+    margin-top: auto;
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+    max-height: 81.5vh;
+    min-height: 0vh;
+    display: flex;
+    flex-direction: column;
     overflow: auto;
 }
 
